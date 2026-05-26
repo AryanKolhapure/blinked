@@ -37,13 +37,16 @@ export default function Home() {
       <nav className="relative z-50 flex items-center justify-between px-6 md:px-12 py-3.5 bg-black/85 backdrop-blur-2xl border-b border-white/10">
 
         {/* Logo */}
-        <div className="flex items-center gap-3 cursor-pointer">
+        <div className="flex items-center cursor-pointer">
 
-          <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-yellow-400 to-amber-500 shadow-[0_0_25px_rgba(255,200,0,0.35)]"></div>
-
-          <h1 className="text-xl font-semibold tracking-tight text-white">
-            Blinked
-          </h1>
+          <Image
+            src="/img/blinked_01.png"
+            alt="Blinked Logo"
+            width={150}
+            height={50}
+            priority
+            className="w-auto h-10 object-contain"
+          />
 
         </div>
 
@@ -122,7 +125,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-black/75" />
 
           {/* Bottom Fade */}
-          <div className="absolute bottom-[-180px] left-1/2 -translate-x-1/2 w-[140%] h-[400px] bg-[#f6f1e8] rounded-[100%] blur-3xl" />
+          <div className="absolute inset-x-0 bottom-0 h-[25%] bg-gradient-to-t from-[#f6f1e8] to-transparent" />
 
           {/* Hero Content */}
           <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
@@ -214,7 +217,7 @@ export default function Home() {
                 whileHover={{
                   y: -3,
                 }}
-                className="px-5 py-3 rounded-full bg-white/10 backdrop-blur-xl border border-white/15 text-white/90 font-medium hover:bg-white/20 transition duration-300 cursor-pointer"
+                className="px-5 py-3 rounded-full bg-black/25 backdrop-blur-xl border border-white/15 text-white/90 font-medium hover:bg-white/20 transition duration-300 cursor-pointer"
               >
 
                 {item}
@@ -229,129 +232,115 @@ export default function Home() {
 
       </section>
 
-      {/* FEATURED */}
-      <section className="relative z-10 py-28">
+      {/* HOW IT WORKS */}
+<section className="relative z-10 py-28 bg-[#f6f1e8]">
 
-        <div className="max-w-7xl mx-auto px-6">
+  <div className="max-w-7xl mx-auto px-6">
 
-          {/* Heading */}
-          <div className="text-center mb-16">
+    {/* Heading */}
+    <div className="text-center max-w-5xl mx-auto">
 
-            <p className="uppercase tracking-[0.3em] text-yellow-700 font-semibold text-sm mb-4">
-              FEATURED DISCOVERY
-            </p>
+      <p className="uppercase tracking-[0.3em] text-yellow-700 font-semibold text-base mb-5">
+        HOW IT WORKS
+      </p>
 
-            <h2 className="text-5xl md:text-6xl font-black tracking-tight">
+      <h2 className="text-5xl md:text-6xl font-black tracking-tight">
+        Grow Your Business
+        <br />
+        With Blinked.
+      </h2>
 
-              Explore What's
-              <br />
-              Trending.
+      <p className="mt-8 text-lg text-black/60 leading-relaxed">
 
-            </h2>
+        Join Blinked to showcase your business,
+        attract customers and unlock powerful
+        growth opportunities.
 
-          </div>
+      </p>
 
-          {/* Cards */}
-          <div className="grid md:grid-cols-3 gap-7">
+    </div>
 
-            {businesses.map((card, index) => (
+    {/* Steps */}
+    <div className="grid md:grid-cols-4 gap-8 mt-20">
 
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 35 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{
-                  delay: index * 0.1,
-                }}
-                whileHover={{
-                  y: -6,
-                }}
-                className="group relative overflow-hidden rounded-[2.5rem] bg-white border border-black/5 shadow-[0_20px_80px_rgba(0,0,0,0.06)]"
-              >
+      {[
+        {
+          number: "1",
+          image: "/img/how1.png",
+          title: "Create account",
+          desc: "Discover the power of connection with Blinked, Mumbai’s modern local business platform. Create an account to unlock opportunities for networking, promoting your business and finding trusted local customers.",
+        },
 
-                {/* Top Image */}
-                <div className="h-[260px] overflow-hidden">
+        {
+          number: "2",
+          image: "/img/how2.png",
+          title: "Add business",
+          desc: "Elevate your business presence with Blinked. Showcase your brand, services and products beautifully to attract customers, increase visibility and stand out from the competition.",
+        },
 
-                  <div
-                    className="w-full h-full bg-cover bg-center group-hover:scale-105 transition duration-700"
-                    style={{
-                      backgroundImage:
-                        "url('/img/victoria-or-chhatrapati-shivaji-terminus-mumbai.webp')",
-                    }}
-                  />
+        {
+          number: "3",
+          image: "/img/how3.png",
+          title: "Grow business",
+          desc: "Expand your reach, attract new customers and maximize growth with Blinked’s modern discovery platform. Build trust, improve visibility and accelerate your business success.",
+        },
 
-                </div>
+        {
+          number: "4",
+          image: "/img/how4.png",
+          title: "Achieve goals",
+          desc: "Connect your social media, showcase company details, add categories and build a complete digital business identity that helps generate leads and grow your presence.",
+        },
+      ].map((item, index) => (
 
-                {/* Content */}
-                <div className="p-8">
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: index * 0.08 }}
+          className="relative text-center bg-white/70 border border-black/5 rounded-[2rem] p-8 backdrop-blur-xl shadow-[0_10px_40px_rgba(0,0,0,0.04)]"
+        >
 
-                  <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-yellow-400 to-amber-500 shadow-[0_0_20px_rgba(255,180,0,0.3)] mb-6"></div>
+          {/* Number */}
+          <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-yellow-400 text-black font-bold flex items-center justify-center shadow-lg">
 
-                  <h3 className="text-3xl font-black tracking-tight">
-
-                    {card.title}
-
-                  </h3>
-
-                  <p className="mt-4 text-black/60 leading-relaxed">
-
-                    {card.desc}
-
-                  </p>
-
-                </div>
-
-              </motion.div>
-
-            ))}
+            {item.number}
 
           </div>
 
-        </div>
+          {/* Image */}
+          <Image
+            src={item.image}
+            alt={item.title}
+            width={90}
+            height={90}
+            className="mx-auto mb-6 object-contain"
+          />
 
-      </section>
+          {/* Title */}
+          <h3 className="text-3xl font-semibold tracking-tight">
 
-      {/* STATS */}
-      <section className="pb-28">
+            {item.title}
 
-        <div className="max-w-6xl mx-auto px-6">
+          </h3>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          {/* Description */}
+          <p className="mt-5 text-black/55 leading-relaxed text-[15px]">
 
-            {[
-              "12K+ Users",
-              "850+ Businesses",
-              "24 Cities",
-              "4.9 Ratings",
-            ].map((item, index) => (
+            {item.desc}
 
-              <div
-                key={index}
-                className="bg-white rounded-[2rem] p-8 text-center border border-black/5 shadow-[0_15px_50px_rgba(0,0,0,0.05)]"
-              >
+          </p>
 
-                <h3 className="text-4xl font-black tracking-tight">
+        </motion.div>
 
-                  {item.split(" ")[0]}
+      ))}
 
-                </h3>
+    </div>
 
-                <p className="mt-3 text-black/50">
+  </div>
 
-                  {item.split(" ").slice(1).join(" ")}
-
-                </p>
-
-              </div>
-
-            ))}
-
-          </div>
-
-        </div>
-
-      </section>
+</section>
 
       {/* FOOTER */}
       <footer className="border-t border-black/10">
