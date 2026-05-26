@@ -232,109 +232,261 @@ export default function Home() {
 
       </section>
 
-      {/* HOW IT WORKS */}
-<section className="relative z-10 py-28 bg-[#f6f1e8]">
+    {/* HOW IT WORKS */}
 
-  <div className="max-w-7xl mx-auto px-6">
+      <section className="relative z-10 py-28 bg-[#f6f1e8]">
 
-    {/* Heading */}
-    <div className="text-center max-w-5xl mx-auto">
+        <div className="max-w-7xl mx-auto px-6">
 
-      <p className="uppercase tracking-[0.3em] text-yellow-700 font-semibold text-base mb-5">
-        HOW IT WORKS
-      </p>
+          {/* Heading */}
+          <div className="text-center max-w-5xl mx-auto">
 
-      <h2 className="text-5xl md:text-6xl font-black tracking-tight">
-        Grow Your Business
-        <br />
-        With Blinked.
-      </h2>
+            <p className="uppercase tracking-[0.3em] text-yellow-700 font-semibold text-base mb-5">
+              HOW IT WORKS
+            </p>
 
-      <p className="mt-8 text-lg text-black/60 leading-relaxed">
+            <h2 className="text-5xl md:text-6xl font-black tracking-tight">
+              Grow Your Business
+              <br />
+              With Blinked.
+            </h2>
 
-        Join Blinked to showcase your business,
-        attract customers and unlock powerful
-        growth opportunities.
+            <p className="mt-8 text-lg text-black/60 leading-relaxed">
 
-      </p>
+              Join Blinked to showcase your business,
+              attract customers and unlock powerful
+              growth opportunities.
 
-    </div>
-
-    {/* Steps */}
-    <div className="grid md:grid-cols-4 gap-8 mt-20">
-
-      {[
-        {
-          number: "1",
-          image: "/img/how1.png",
-          title: "Create account",
-          desc: "Discover the power of connection with Blinked, Mumbai’s modern local business platform. Create an account to unlock opportunities for networking, promoting your business and finding trusted local customers.",
-        },
-
-        {
-          number: "2",
-          image: "/img/how2.png",
-          title: "Add business",
-          desc: "Elevate your business presence with Blinked. Showcase your brand, services and products beautifully to attract customers, increase visibility and stand out from the competition.",
-        },
-
-        {
-          number: "3",
-          image: "/img/how3.png",
-          title: "Grow business",
-          desc: "Expand your reach, attract new customers and maximize growth with Blinked’s modern discovery platform. Build trust, improve visibility and accelerate your business success.",
-        },
-
-        {
-          number: "4",
-          image: "/img/how4.png",
-          title: "Achieve goals",
-          desc: "Connect your social media, showcase company details, add categories and build a complete digital business identity that helps generate leads and grow your presence.",
-        },
-      ].map((item, index) => (
-
-        <motion.div
-          key={index}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: index * 0.08 }}
-          className="relative text-center bg-white/70 border border-black/5 rounded-[2rem] p-8 backdrop-blur-xl shadow-[0_10px_40px_rgba(0,0,0,0.04)]"
-        >
-
-          {/* Number */}
-          <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-yellow-400 text-black font-bold flex items-center justify-center shadow-lg">
-
-            {item.number}
+            </p>
 
           </div>
 
-          {/* Image */}
+          {/* Steps */}
+          <div className="grid md:grid-cols-4 gap-8 mt-20">
+
+            {[
+              {
+                number: "1",
+                image: "/img/how1.png",
+                title: "Create account",
+                desc: "Discover the power of connection with Blinked, Mumbai’s modern local business platform. Create an account to unlock opportunities for networking, promoting your business and finding trusted local customers.",
+              },
+
+              {
+                number: "2",
+                image: "/img/how2.png",
+                title: "Add business",
+                desc: "Elevate your business presence with Blinked. Showcase your brand, services and products beautifully to attract customers, increase visibility and stand out from the competition.",
+              },
+
+              {
+                number: "3",
+                image: "/img/how3.png",
+                title: "Grow business",
+                desc: "Expand your reach, attract new customers and maximize growth with Blinked’s modern discovery platform. Build trust, improve visibility and accelerate your business success.",
+              },
+
+              {
+                number: "4",
+                image: "/img/how4.png",
+                title: "Achieve goals",
+                desc: "Connect your social media, showcase company details, add categories and build a complete digital business identity that helps generate leads and grow your presence.",
+              },
+            ].map((item, index) => (
+
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                whileHover={{
+                  y: -8,
+                  scale: 1.02,
+                }}
+                viewport={{ once: true }}
+                transition={{
+                  delay: index * 0.08,
+                  type: "spring",
+                  stiffness: 200,
+                }}
+                className="relative text-center bg-white/70 border border-black/5 rounded-[2rem] p-8 backdrop-blur-md shadow-[0_12px_40px_rgba(0,0,0,0.06)]"
+              >
+
+                {/* Number */}
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-yellow-400 text-black font-bold flex items-center justify-center shadow-lg">
+
+                  {item.number}
+
+                </div>
+
+                {/* Image */}
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  width={90}
+                  height={90}
+                  className="mx-auto mb-6 object-contain"
+                />
+
+                {/* Title */}
+                <h3 className="text-3xl font-semibold tracking-tight">
+
+                  {item.title}
+
+                </h3>
+
+                {/* Description */}
+                <p className="mt-5 text-black/55 leading-relaxed text-[15px]">
+
+                  {item.desc}
+
+                </p>
+
+              </motion.div>
+
+            ))}
+
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* WHY BLINKED */}
+<section className="relative z-10 py-24 bg-[#111315] overflow-hidden">
+
+  <div className="max-w-7xl mx-auto px-6">
+
+    {/* Top Heading */}
+    <div className="max-w-4xl">
+
+      <p className="uppercase tracking-[0.3em] text-yellow-500 font-semibold text-lg mb-5">
+        BLINKED IDEA
+      </p>
+
+      <h2 className="max-w-3xl text-5xl md:text-5xl font-black tracking-tight leading-[1] text-white">
+
+        Elevating Businesses.
+        <br />
+        Amplifying Services.
+
+      </h2>
+
+    </div>
+
+    {/* Main Layout */}
+    <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-16 mt-16 items-center">
+
+      {/* Left Image */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="relative"
+        whileHover={{
+          scale: 1.01,
+}}
+      >
+
+        <div className="relative overflow-hidden rounded-[2.5rem] border border-white/15 shadow-[0_20px_80px_rgba(0,0,0,0.08)]">
+
           <Image
-            src={item.image}
-            alt={item.title}
-            width={90}
-            height={90}
-            className="mx-auto mb-6 object-contain"
+            src="/img/business.png"
+            alt="Blinked"
+            width={1400}
+            height={1000}
+            className="w-full h-[500px] object-cover"
           />
 
-          {/* Title */}
-          <h3 className="text-3xl font-semibold tracking-tight">
+          {/* Soft Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
 
-            {item.title}
+        </div>
+
+      </motion.div>
+
+      {/* Right Features */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="space-y-8"
+      >
+
+        <div>
+
+          <h3 className="text-2xl font-semibold tracking-tight text-white">
+
+            Smart Discovery
 
           </h3>
 
-          {/* Description */}
-          <p className="mt-5 text-black/55 leading-relaxed text-[15px]">
+          <p className="mt-3 text-white/70 leading-relaxed">
 
-            {item.desc}
+            Help customers discover trusted local
+            businesses faster through a modern,
+            beautifully designed platform.
 
           </p>
 
-        </motion.div>
+        </div>
 
-      ))}
+        <div>
+
+          <h3 className="text-2xl font-semibold tracking-tight text-white">
+
+            Rich Business Profiles
+
+          </h3>
+
+          <p className="mt-3 text-white/70 leading-relaxed">
+
+            Showcase services, social links,
+            maps, photos and important business
+            details all in one place.
+
+          </p>
+
+        </div>
+
+        <div>
+
+          <h3 className="text-2xl font-semibold tracking-tight text-white">
+
+            Digital Business Identity
+
+          </h3>
+
+          <p className="mt-3 text-white/70 leading-relaxed">
+
+            Turn your business listing into a
+            complete digital storefront experience
+            customers can trust.
+
+          </p>
+
+        </div>
+
+        <div>
+
+          <h3 className="text-2xl font-semibold tracking-tight text-white">
+
+            Growth Focused
+
+          </h3>
+
+          <p className="mt-3 text-white/70 leading-relaxed">
+
+            Increase visibility, generate leads
+            and build a stronger presence in your
+            local market.
+
+          </p>
+
+        </div>
+
+      </motion.div>
 
     </div>
 
