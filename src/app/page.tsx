@@ -1,70 +1,40 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const categories = [
-  "☕ Cafes",
-  "🎮 Gaming",
-  "📚 Study Spots",
-  "🍜 Food",
-  "🎨 Creators",
-  "💼 Startups",
+  "Restaurants",
+  "Cafes",
+  "Gyms",
+  "Salons",
+  "Gaming",
+  "Startups",
+  "Hotels",
+  "Photography",
 ];
 
-const cards = [
+const businesses = [
   {
     title: "Hidden Cafes",
-    desc: "Quiet aesthetic corners around Mumbai.",
+    desc: "Aesthetic workspaces and underrated gems.",
   },
   {
-    title: "Gaming Zones",
-    desc: "Competitive arenas and chill setups.",
+    title: "Luxury Dining",
+    desc: "Top rated restaurants and fine dining spots.",
   },
   {
-    title: "Creative Communities",
-    desc: "Discover creators, artists and events.",
+    title: "Creative Studios",
+    desc: "Discover creators, photographers and artists.",
   },
 ];
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen overflow-hidden bg-[#fdfbf7] text-black">
-
-      {/* BACKGROUND */}
-      <div className="absolute inset-0 overflow-hidden">
-
-        {/* Texture */}
-        <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(#000_1px,transparent_1px),linear-gradient(to_right,#000_1px,transparent_1px)] bg-[size:80px_80px]" />
-
-        {/* Glow */}
-        <motion.div
-          animate={{
-            x: [0, 60, 0],
-            y: [0, -30, 0],
-          }}
-          transition={{
-            duration: 14,
-            repeat: Infinity,
-          }}
-          className="absolute top-[-250px] left-[-150px] w-[650px] h-[650px] rounded-full bg-yellow-200/40 blur-3xl"
-        />
-
-        <motion.div
-          animate={{
-            x: [0, -50, 0],
-            y: [0, 40, 0],
-          }}
-          transition={{
-            duration: 18,
-            repeat: Infinity,
-          }}
-          className="absolute right-[-200px] top-[200px] w-[600px] h-[600px] rounded-full bg-amber-200/30 blur-3xl"
-        />
-
-      </div>
+    <main className="bg-[#f6f1e8] text-black overflow-hidden min-h-screen">
 
       {/* NAVBAR */}
-      <nav className="relative z-30 flex items-center justify-between px-6 md:px-12 py-3.5 bg-black/90 backdrop-blur-2xl border-b border-white/10">
+      <nav className="relative z-50 flex items-center justify-between px-6 md:px-12 py-3.5 bg-black/85 backdrop-blur-2xl border-b border-white/10">
 
         {/* Logo */}
         <div className="flex items-center gap-3 cursor-pointer">
@@ -80,7 +50,7 @@ export default function Home() {
         {/* Right Side */}
         <div className="flex items-center gap-8">
 
-          {/* Navigation Links */}
+          {/* Links */}
           <div className="hidden lg:flex items-center gap-7 text-sm font-medium">
 
             <a
@@ -130,40 +100,63 @@ export default function Home() {
 
       </nav>
 
-      {/* HERO */}
-      <section className="relative z-10">
+        {/* HERO */}
+        <section className="relative min-h-[95vh] flex items-center justify-center overflow-hidden">
 
-        <div className="max-w-6xl mx-auto px-6 pt-24 md:pt-32 text-center">
+          {/* Background Image */}
+          <div className="absolute inset-0">
 
-          {/* Label */}
+            <Image
+              src="/img/victoria-or-chhatrapati-shivaji-terminus-mumbai.png"
+              alt="Mumbai"
+              fill
+              priority
+              quality={100}
+              unoptimized
+              className="object-cover object-center scale-[1.02]"
+            />
+
+          </div>
+
+          {/* Soft Overlay */}
+          <div className="absolute inset-0 bg-black/75" />
+
+          {/* Bottom Fade */}
+          <div className="absolute bottom-[-180px] left-1/2 -translate-x-1/2 w-[140%] h-[400px] bg-[#f6f1e8] rounded-[100%] blur-3xl" />
+
+          {/* Hero Content */}
+          <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
+
+          {/* Small Badge */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-black/10 bg-white/60 backdrop-blur-xl shadow-lg"
+            className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full px-5 py-2 mb-8"
           >
 
-            <div className="w-2 h-2 rounded-full bg-yellow-500"></div>
+            <div className="w-2 h-2 rounded-full bg-yellow-400"></div>
 
-            <p className="text-sm font-medium text-black/60">
-              Discover your city beautifully
+            <p className="text-white/80 text-sm font-medium tracking-wide">
+              Trusted Local Discovery Platform
             </p>
 
           </motion.div>
 
           {/* Heading */}
           <motion.h1
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 35 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
-            className="mt-10 text-[4rem] md:text-[7rem] font-black tracking-tight leading-[0.92]"
+            className="text-white text-[4rem] md:text-[7rem] leading-[0.92] font-black tracking-tight"
           >
 
-            Discover
+            Find your
             <br />
 
-            Mumbai
-            <span className="text-yellow-500"> differently.</span>
+            <span className="text-yellow-400">
+              Local Business
+            </span>
 
           </motion.h1>
 
@@ -171,13 +164,12 @@ export default function Home() {
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.4 }}
-            className="mt-8 text-lg md:text-xl text-black/60 leading-relaxed max-w-2xl mx-auto"
+            transition={{ delay: 0.3 }}
+            className="mt-8 text-lg md:text-2xl text-white/75 max-w-3xl mx-auto leading-relaxed"
           >
 
-            Explore cafes, gaming zones, creators,
-            startups and hidden gems across Mumbai
-            in one immersive discovery platform.
+            Discover top rated trusted best business
+            and services around you.
 
           </motion.p>
 
@@ -185,19 +177,19 @@ export default function Home() {
           <motion.div
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6 }}
+            transition={{ delay: 0.5 }}
             className="mt-12"
           >
 
-            <div className="max-w-3xl mx-auto p-3 rounded-[2rem] bg-white/70 backdrop-blur-2xl border border-white/60 shadow-[0_20px_80px_rgba(0,0,0,0.08)] flex items-center gap-3">
+            <div className="max-w-4xl mx-auto bg-white/15 backdrop-blur-2xl border border-white/20 rounded-[2rem] p-3 shadow-[0_20px_80px_rgba(0,0,0,0.25)] flex items-center gap-3">
 
               <input
                 type="text"
-                placeholder="Search cafes, creators, startups..."
-                className="flex-1 bg-transparent outline-none px-5 py-4 text-lg placeholder:text-black/30"
+                placeholder="Search restaurants, cafes, salons..."
+                className="flex-1 bg-transparent outline-none px-5 py-4 text-lg text-white placeholder:text-white/50"
               />
 
-              <button className="bg-black text-white px-7 py-4 rounded-2xl hover:scale-105 transition duration-300">
+              <button className="bg-yellow-400 text-black px-8 py-4 rounded-2xl font-semibold hover:scale-105 transition duration-300">
 
                 Search
 
@@ -217,12 +209,12 @@ export default function Home() {
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{
-                  delay: index * 0.08,
+                  delay: index * 0.06,
                 }}
                 whileHover={{
-                  y: -2,
+                  y: -3,
                 }}
-                className="px-6 py-3 rounded-full bg-white/60 backdrop-blur-xl border border-black/5 shadow-lg text-black/70 font-medium cursor-pointer hover:bg-white transition"
+                className="px-5 py-3 rounded-full bg-white/10 backdrop-blur-xl border border-white/15 text-white/90 font-medium hover:bg-white/20 transition duration-300 cursor-pointer"
               >
 
                 {item}
@@ -237,18 +229,36 @@ export default function Home() {
 
       </section>
 
-      {/* FEATURED CARDS */}
-      <section className="relative z-10 pt-24 pb-28">
+      {/* FEATURED */}
+      <section className="relative z-10 py-28">
 
         <div className="max-w-7xl mx-auto px-6">
 
-          <div className="grid md:grid-cols-3 gap-6">
+          {/* Heading */}
+          <div className="text-center mb-16">
 
-            {cards.map((card, index) => (
+            <p className="uppercase tracking-[0.3em] text-yellow-700 font-semibold text-sm mb-4">
+              FEATURED DISCOVERY
+            </p>
+
+            <h2 className="text-5xl md:text-6xl font-black tracking-tight">
+
+              Explore What's
+              <br />
+              Trending.
+
+            </h2>
+
+          </div>
+
+          {/* Cards */}
+          <div className="grid md:grid-cols-3 gap-7">
+
+            {businesses.map((card, index) => (
 
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 40 }}
+                initial={{ opacity: 0, y: 35 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{
@@ -257,14 +267,26 @@ export default function Home() {
                 whileHover={{
                   y: -6,
                 }}
-                className="group relative overflow-hidden rounded-[2.5rem] bg-white/70 border border-black/5 backdrop-blur-2xl p-8 shadow-[0_20px_80px_rgba(0,0,0,0.06)]"
+                className="group relative overflow-hidden rounded-[2.5rem] bg-white border border-black/5 shadow-[0_20px_80px_rgba(0,0,0,0.06)]"
               >
 
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-br from-yellow-100/60 to-amber-100/30" />
+                {/* Top Image */}
+                <div className="h-[260px] overflow-hidden">
 
-                <div className="relative z-10">
+                  <div
+                    className="w-full h-full bg-cover bg-center group-hover:scale-105 transition duration-700"
+                    style={{
+                      backgroundImage:
+                        "url('/img/victoria-or-chhatrapati-shivaji-terminus-mumbai.webp')",
+                    }}
+                  />
 
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-yellow-400 to-amber-500 shadow-[0_0_30px_rgba(255,180,0,0.3)] mb-8" />
+                </div>
+
+                {/* Content */}
+                <div className="p-8">
+
+                  <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-yellow-400 to-amber-500 shadow-[0_0_20px_rgba(255,180,0,0.3)] mb-6"></div>
 
                   <h3 className="text-3xl font-black tracking-tight">
 
@@ -272,7 +294,7 @@ export default function Home() {
 
                   </h3>
 
-                  <p className="mt-5 text-black/60 leading-relaxed">
+                  <p className="mt-4 text-black/60 leading-relaxed">
 
                     {card.desc}
 
@@ -290,74 +312,40 @@ export default function Home() {
 
       </section>
 
-      {/* FEATURE SPLIT */}
-      <section className="relative z-10 pb-32">
+      {/* STATS */}
+      <section className="pb-28">
 
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-6">
 
-          <div className="grid md:grid-cols-2 gap-14 items-center">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
 
-            {/* Visual */}
-            <motion.div
-              whileHover={{
-                scale: 1.01,
-              }}
-              className="relative h-[550px] rounded-[3rem] overflow-hidden bg-gradient-to-br from-yellow-200 via-amber-100 to-white shadow-[0_20px_100px_rgba(0,0,0,0.08)]"
-            >
+            {[
+              "12K+ Users",
+              "850+ Businesses",
+              "24 Cities",
+              "4.9 Ratings",
+            ].map((item, index) => (
 
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.9),transparent)]" />
+              <div
+                key={index}
+                className="bg-white rounded-[2rem] p-8 text-center border border-black/5 shadow-[0_15px_50px_rgba(0,0,0,0.05)]"
+              >
 
-              <div className="absolute bottom-10 left-10">
+                <h3 className="text-4xl font-black tracking-tight">
 
-                <p className="text-black/40 mb-3">
-                  Community Driven
-                </p>
-
-                <h3 className="text-6xl font-black leading-none">
-
-                  Discover
-                  <br />
-                  Together.
+                  {item.split(" ")[0]}
 
                 </h3>
 
+                <p className="mt-3 text-black/50">
+
+                  {item.split(" ").slice(1).join(" ")}
+
+                </p>
+
               </div>
 
-            </motion.div>
-
-            {/* Text */}
-            <div>
-
-              <p className="uppercase tracking-[0.3em] text-yellow-700 font-semibold text-sm mb-6">
-
-                LOCAL DISCOVERY
-
-              </p>
-
-              <h2 className="text-5xl md:text-6xl font-black leading-tight tracking-tight">
-
-                More Than
-                <br />
-                A Directory.
-
-              </h2>
-
-              <p className="mt-8 text-black/60 text-xl leading-relaxed max-w-xl">
-
-                Blinked blends businesses,
-                creators, communities and places
-                into one immersive modern
-                discovery experience.
-
-              </p>
-
-              <button className="mt-10 bg-black text-white px-8 py-4 rounded-full hover:scale-105 transition duration-300">
-
-                Explore Platform
-
-              </button>
-
-            </div>
+            ))}
 
           </div>
 
@@ -366,18 +354,18 @@ export default function Home() {
       </section>
 
       {/* FOOTER */}
-      <footer className="relative z-10 border-t border-black/5">
+      <footer className="border-t border-black/10">
 
         <div className="max-w-7xl mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-6">
 
           <div>
 
-            <h2 className="text-2xl font-black">
+            <h2 className="text-3xl font-black">
               Blinked
             </h2>
 
             <p className="mt-2 text-black/50">
-              Discover your city differently.
+              Discover your city beautifully.
             </p>
 
           </div>
