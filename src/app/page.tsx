@@ -351,10 +351,10 @@ export default function Home() {
 
       </section>
 
-      {/* WHY BLINKED */}
-<section className="relative z-10 py-24 bg-[#111315] overflow-hidden">
+ {/* WHY BLINKED */}
+<section className="relative z-10 py-24 bg-[#111315] overflow-visible">
 
-  <div className="max-w-7xl mx-auto px-6">
+  <div className="relative z-10 max-w-7xl mx-auto px-6">
 
     {/* Top Heading */}
     <div className="max-w-4xl">
@@ -380,15 +380,15 @@ export default function Home() {
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
+        whileHover={{
+          scale: 1.01,
+        }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
         className="relative"
-        whileHover={{
-          scale: 1.01,
-}}
       >
 
-        <div className="relative overflow-hidden rounded-[2.5rem] border border-white/15 shadow-[0_20px_80px_rgba(0,0,0,0.08)]">
+        <div className="relative overflow-hidden rounded-[2.5rem] border border-white/10 shadow-[0_20px_80px_rgba(0,0,0,0.35)]">
 
           <Image
             src="/img/business.png"
@@ -398,8 +398,8 @@ export default function Home() {
             className="w-full h-[500px] object-cover"
           />
 
-          {/* Soft Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+          {/* Image Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
 
         </div>
 
@@ -422,9 +422,9 @@ export default function Home() {
 
           </h3>
 
-          <p className="mt-3 text-white/70 leading-relaxed">
+          <p className="mt-3 text-white/65 leading-relaxed">
 
-            Help customers discover trusted local
+            ➯ Help customers discover trusted local
             businesses faster through a modern,
             beautifully designed platform.
 
@@ -440,9 +440,9 @@ export default function Home() {
 
           </h3>
 
-          <p className="mt-3 text-white/70 leading-relaxed">
+          <p className="mt-3 text-white/65 leading-relaxed">
 
-            Showcase services, social links,
+            ➯ Showcase services, social links,
             maps, photos and important business
             details all in one place.
 
@@ -458,9 +458,9 @@ export default function Home() {
 
           </h3>
 
-          <p className="mt-3 text-white/70 leading-relaxed">
+          <p className="mt-3 text-white/65 leading-relaxed">
 
-            Turn your business listing into a
+            ➯ Turn your business listing into a
             complete digital storefront experience
             customers can trust.
 
@@ -476,9 +476,9 @@ export default function Home() {
 
           </h3>
 
-          <p className="mt-3 text-white/70 leading-relaxed">
+          <p className="mt-3 text-white/65 leading-relaxed">
 
-            Increase visibility, generate leads
+            ➯ Increase visibility, generate leads
             and build a stronger presence in your
             local market.
 
