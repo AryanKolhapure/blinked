@@ -3,109 +3,117 @@
 import { motion } from "framer-motion";
 
 const categories = [
-  "☕ Cafes",
-  "🎮 Gaming",
-  "📚 Study Spots",
-  "🎨 Creators",
-  "🍜 Food",
-  "💼 Startups",
-  "📸 Photography",
-  "🎵 Music",
+  "Cafés",
+  "Gaming",
+  "Study Spots",
+  "Startups",
+  "Food",
+  "Creators",
+  "Fitness",
+  "Photography",
+];
+
+const featured = [
+  {
+    title: "Hidden Cafés",
+    desc: "Quiet aesthetic spaces across Mumbai.",
+  },
+  {
+    title: "Creative Communities",
+    desc: "Find artists, photographers and creators.",
+  },
+  {
+    title: "Startup Hubs",
+    desc: "Discover founders and modern workspaces.",
+  },
 ];
 
 export default function Home() {
   return (
-    <main className="bg-[#fdfbf7] text-black overflow-hidden min-h-screen">
+    <main className="relative min-h-screen overflow-hidden bg-[#07090d] text-white">
 
       {/* Background */}
       <div className="absolute inset-0 overflow-hidden">
 
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:80px_80px]" />
+
         <motion.div
           animate={{
-            x: [0, 80, 0],
-            y: [0, -40, 0],
+            x: [0, 40, 0],
+            y: [0, -30, 0],
           }}
           transition={{
-            duration: 12,
+            duration: 14,
             repeat: Infinity,
           }}
-          className="absolute top-[-200px] left-[-100px] w-[600px] h-[600px] rounded-full bg-yellow-300/30 blur-3xl"
+          className="absolute top-[-200px] left-[-100px] w-[500px] h-[500px] rounded-full bg-purple-500/20 blur-[140px]"
         />
 
         <motion.div
           animate={{
-            x: [0, -60, 0],
-            y: [0, 50, 0],
+            x: [0, -50, 0],
+            y: [0, 40, 0],
           }}
           transition={{
-            duration: 15,
+            duration: 18,
             repeat: Infinity,
           }}
-          className="absolute right-[-100px] top-[200px] w-[500px] h-[500px] rounded-full bg-amber-200/40 blur-3xl"
+          className="absolute bottom-[-200px] right-[-100px] w-[500px] h-[500px] rounded-full bg-blue-500/20 blur-[140px]"
         />
 
       </div>
 
       {/* Navbar */}
-      <nav className="relative z-30 flex items-center justify-between px-6 md:px-12 py-3.5 bg-black/90 backdrop-blur-2xl border-b border-white/10">
+      <nav className="sticky top-0 z-50 backdrop-blur-2xl border-b border-white/10 bg-black/20">
 
-        {/* Logo */}
-        <div className="flex items-center gap-3 cursor-pointer">
+        <div className="max-w-7xl mx-auto px-6">
 
-          <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-yellow-400 to-amber-500 shadow-[0_0_25px_rgba(255,200,0,0.35)]"></div>
+          <div className="flex items-center justify-between py-5">
 
-          <h1 className="text-xl font-semibold tracking-tight text-white">
-            Blinked
-          </h1>
+            {/* Logo */}
+            <div className="flex items-center gap-3 cursor-pointer">
 
-        </div>
+              <div className="w-9 h-9 rounded-2xl bg-gradient-to-br from-purple-500 to-blue-500 shadow-[0_0_40px_rgba(124,58,237,0.45)]"></div>
 
-        {/* Right Side */}
-        <div className="flex items-center gap-8">
+              <h1 className="text-xl font-semibold tracking-tight">
+                Blinked
+              </h1>
 
-          {/* Navigation Links */}
-          <div className="hidden lg:flex items-center gap-7 text-sm font-medium">
+            </div>
 
-            <a
-              href="#"
-              className="text-white hover:text-yellow-400 transition duration-300"
-            >
-              Home
-            </a>
+            {/* Nav */}
+            <div className="hidden lg:flex items-center gap-8 text-sm text-white/70">
 
-            <a
-              href="#"
-              className="text-white/70 hover:text-yellow-400 transition duration-300"
-            >
-              Directory
-            </a>
+              <a href="#" className="hover:text-white transition">
+                Home
+              </a>
 
-            <a
-              href="#"
-              className="text-white/70 hover:text-yellow-400 transition duration-300"
-            >
-              Subscription Pricing
-            </a>
+              <a href="#" className="hover:text-white transition">
+                Directory
+              </a>
 
-            <a
-              href="#"
-              className="text-white/70 hover:text-yellow-400 transition duration-300"
-            >
-              Contact Us
-            </a>
+              <a href="#" className="hover:text-white transition">
+                Pricing
+              </a>
 
-          </div>
+              <a href="#" className="hover:text-white transition">
+                Contact
+              </a>
 
-          {/* Buttons */}
-          <div className="flex items-center gap-3">
+            </div>
 
-            <button className="text-sm text-white/70 hover:text-white transition">
-              Log in
-            </button>
+            {/* Buttons */}
+            <div className="flex items-center gap-3">
 
-            <button className="bg-gradient-to-r from-yellow-400 to-amber-500 text-black text-sm font-semibold px-5 py-2 rounded-full hover:scale-105 hover:shadow-[0_0_30px_rgba(255,200,0,0.35)] transition duration-300">
-              Create account
-            </button>
+              <button className="text-sm text-white/70 hover:text-white transition">
+                Log in
+              </button>
+
+              <button className="bg-white text-black text-sm font-medium px-5 py-2.5 rounded-full hover:scale-105 transition duration-300">
+                Join now
+              </button>
+
+            </div>
 
           </div>
 
@@ -114,97 +122,89 @@ export default function Home() {
       </nav>
 
       {/* Hero */}
-      <section className="relative z-10 px-6 md:px-16 pt-10 md:pt-24">
+      <section className="relative z-10">
 
-        <motion.div
-          initial={{ opacity: 0, y: 60 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-        >
+        <div className="max-w-7xl mx-auto px-6 pt-24 pb-24">
 
-          <p className="uppercase tracking-[0.4em] text-yellow-700 font-semibold text-sm mb-6">
-            DISCOVER YOUR CITY
-          </p>
-
-          <h1 className="text-[4rem] md:text-[8rem] leading-[0.9] font-black tracking-tight max-w-6xl">
-
-            Explore
-            <br />
-
-            Mumbai
-            <span className="text-yellow-500"> differently.</span>
-
-          </h1>
-
-        </motion.div>
-
-        {/* Hero Bottom */}
-        <div className="grid md:grid-cols-2 gap-12 mt-16 items-end">
-
-          {/* Left */}
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            className="text-center"
           >
 
-            <p className="text-xl text-black/60 leading-relaxed max-w-xl">
+            {/* Label */}
+            <div className="inline-flex items-center gap-2 border border-white/10 bg-white/[0.03] backdrop-blur-xl rounded-full px-5 py-2 text-sm text-white/60 mb-8">
 
-              Discover cafes, creators, gaming zones,
-              study spots, startups and hidden gems
-              around Mumbai in one beautiful space.
+              <div className="w-2 h-2 rounded-full bg-green-400"></div>
+
+              Discover modern local spaces
+
+            </div>
+
+            {/* Heading */}
+            <h1 className="text-5xl md:text-8xl font-semibold tracking-[-0.06em] leading-[0.95] max-w-5xl mx-auto">
+
+              Discover the
+              <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+                {" "}best places{" "}
+              </span>
+              around you.
+
+            </h1>
+
+            {/* Subtext */}
+            <p className="mt-8 text-lg md:text-xl text-white/50 leading-relaxed max-w-2xl mx-auto">
+
+              Explore cafés, creators, startups, gaming spots,
+              communities and hidden gems across Mumbai —
+              all in one beautifully curated platform.
 
             </p>
 
             {/* Search */}
-            <div className="mt-10 bg-white/70 backdrop-blur-2xl border border-white/50 shadow-2xl rounded-[2rem] p-3 flex items-center max-w-2xl">
+            <div className="mt-12 max-w-3xl mx-auto">
 
-              <input
-                type="text"
-                placeholder="Search places, creators, cafes..."
-                className="flex-1 bg-transparent outline-none px-5 py-4 text-lg placeholder:text-black/30"
-              />
+              <div className="flex items-center gap-3 p-3 rounded-[28px] border border-white/10 bg-white/[0.04] backdrop-blur-2xl shadow-[0_0_80px_rgba(124,58,237,0.12)]">
 
-              <button className="bg-black text-white px-8 py-4 rounded-2xl hover:scale-105 transition">
-                Search
-              </button>
+                <input
+                  type="text"
+                  placeholder="Search cafes, creators, gaming zones..."
+                  className="flex-1 bg-transparent outline-none px-5 py-4 text-white placeholder:text-white/30"
+                />
+
+                <button className="bg-white text-black px-7 py-4 rounded-2xl font-medium hover:scale-105 transition duration-300">
+
+                  Search
+
+                </button>
+
+              </div>
 
             </div>
 
-          </motion.div>
+            {/* Categories */}
+            <div className="flex flex-wrap items-center justify-center gap-4 mt-10">
 
-          {/* Right Floating Card */}
-          <motion.div
-            animate={{
-              y: [0, -15, 0],
-            }}
-            transition={{
-              duration: 5,
-              repeat: Infinity,
-            }}
-            className="relative"
-          >
+              {categories.map((item, index) => (
 
-            <div className="bg-black text-white rounded-[3rem] p-10 shadow-2xl rotate-[-3deg]">
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.08 }}
+                  whileHover={{
+                    y: -3,
+                    scale: 1.03,
+                  }}
+                  className="px-5 py-3 rounded-full border border-white/10 bg-white/[0.03] text-white/70 backdrop-blur-xl hover:bg-white/[0.06] hover:text-white transition duration-300 cursor-pointer"
+                >
 
-              <p className="text-white/40 mb-4">
-                Trending This Week
-              </p>
+                  {item}
 
-              <h3 className="text-5xl font-black leading-tight">
+                </motion.div>
 
-                ☕ Hidden
-                <br />
-                Cafes
-
-              </h3>
-
-              <p className="mt-6 text-white/60 leading-relaxed">
-
-                Aesthetic workspaces, quiet corners
-                and underrated Mumbai gems.
-
-              </p>
+              ))}
 
             </div>
 
@@ -214,93 +214,91 @@ export default function Home() {
 
       </section>
 
-      {/* Infinite Category Strip */}
-      <section className="relative z-10 mt-28 overflow-hidden">
+      {/* Featured Cards */}
+      <section className="relative z-10 pb-28">
 
-        <motion.div
-          animate={{
-            x: ["0%", "-50%"],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-          className="flex gap-6 whitespace-nowrap"
-        >
+        <div className="max-w-7xl mx-auto px-6">
 
-          {[...categories, ...categories].map((item, index) => (
+          <div className="grid md:grid-cols-3 gap-6">
 
-            <div
-              key={index}
-              className="bg-white/70 backdrop-blur-xl border border-black/5 px-8 py-5 rounded-full text-xl font-semibold shadow-lg"
-            >
-              {item}
-            </div>
+            {featured.map((card, index) => (
 
-          ))}
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.15 }}
+                whileHover={{
+                  y: -6,
+                }}
+                className="group relative overflow-hidden rounded-[32px] border border-white/10 bg-white/[0.03] backdrop-blur-2xl p-8 hover:border-white/20 transition duration-500"
+              >
 
-        </motion.div>
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-br from-purple-500/10 to-blue-500/10"></div>
+
+                <div className="relative z-10">
+
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-500 to-blue-500 mb-8 shadow-[0_0_40px_rgba(124,58,237,0.4)]"></div>
+
+                  <h3 className="text-3xl font-semibold tracking-tight">
+
+                    {card.title}
+
+                  </h3>
+
+                  <p className="mt-5 text-white/50 leading-relaxed">
+
+                    {card.desc}
+
+                  </p>
+
+                </div>
+
+              </motion.div>
+
+            ))}
+
+          </div>
+
+        </div>
 
       </section>
 
-      {/* Split Section */}
-      <section className="relative z-10 px-6 md:px-16 py-32">
+      {/* Stats */}
+      <section className="relative z-10 pb-32">
 
-        <div className="grid md:grid-cols-2 gap-16 items-center">
+        <div className="max-w-6xl mx-auto px-6">
 
-          {/* Left Big Visual */}
-          <motion.div
-            whileHover={{ scale: 1.02 }}
-            className="h-[600px] rounded-[3rem] bg-gradient-to-br from-yellow-300 via-amber-200 to-white shadow-2xl relative overflow-hidden"
-          >
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
 
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.7),transparent)]"></div>
+            {[
+              "12K+ Users",
+              "850+ Businesses",
+              "24 Cities",
+              "95% Satisfaction",
+            ].map((item, index) => (
 
-            <div className="absolute bottom-10 left-10">
+              <div
+                key={index}
+                className="rounded-[28px] border border-white/10 bg-white/[0.03] backdrop-blur-2xl p-8 text-center"
+              >
 
-              <p className="text-black/40 mb-3">
-                Community Driven
-              </p>
+                <h3 className="text-3xl md:text-4xl font-semibold tracking-tight">
 
-              <h3 className="text-6xl font-black leading-none">
+                  {item.split(" ")[0]}
 
-                Discover
-                <br />
-                Together.
+                </h3>
 
-              </h3>
+                <p className="mt-3 text-white/50">
 
-            </div>
+                  {item.split(" ").slice(1).join(" ")}
 
-          </motion.div>
+                </p>
 
-          {/* Right Text */}
-          <div>
+              </div>
 
-            <p className="uppercase tracking-[0.3em] text-yellow-700 font-semibold text-sm mb-6">
-              LOCAL DISCOVERY
-            </p>
-
-            <h2 className="text-6xl font-black leading-tight">
-
-              More Than
-              <br />
-              A Directory.
-
-            </h2>
-
-            <p className="mt-8 text-black/60 text-xl leading-relaxed max-w-xl">
-
-              Blinked blends businesses, creators,
-              communities and places into one
-              immersive discovery experience.
-
-            </p>
-
-            <button className="mt-10 bg-black text-white px-8 py-4 rounded-full hover:scale-105 transition">
-              Explore Platform
-            </button>
+            ))}
 
           </div>
 
@@ -309,20 +307,39 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="relative z-10 px-6 md:px-16 pb-12">
+      <footer className="relative z-10 border-t border-white/10">
 
-        <div className="border-t border-black/10 pt-10 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="max-w-7xl mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-6">
 
-          <h2 className="text-3xl font-black">
-            Blinked
-          </h2>
+          <div>
 
-          <div className="flex gap-8 text-black/50">
+            <h2 className="text-2xl font-semibold tracking-tight">
+              Blinked
+            </h2>
 
-            <a href="#">Instagram</a>
-            <a href="#">Twitter</a>
-            <a href="#">LinkedIn</a>
-            <a href="#">Contact</a>
+            <p className="mt-2 text-white/40">
+              Discover your city differently.
+            </p>
+
+          </div>
+
+          <div className="flex items-center gap-8 text-white/50">
+
+            <a href="#" className="hover:text-white transition">
+              Instagram
+            </a>
+
+            <a href="#" className="hover:text-white transition">
+              Twitter
+            </a>
+
+            <a href="#" className="hover:text-white transition">
+              LinkedIn
+            </a>
+
+            <a href="#" className="hover:text-white transition">
+              Contact
+            </a>
 
           </div>
 
