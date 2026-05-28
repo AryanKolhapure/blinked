@@ -2,6 +2,13 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaLinkedinIn,
+  FaPinterestP,
+  FaWhatsapp,
+} from "react-icons/fa";
 
 const categories = [
   "Restaurants",
@@ -12,21 +19,6 @@ const categories = [
   "Startups",
   "Hotels",
   "Photography",
-];
-
-const businesses = [
-  {
-    title: "Hidden Cafes",
-    desc: "Aesthetic workspaces and underrated gems.",
-  },
-  {
-    title: "Luxury Dining",
-    desc: "Top rated restaurants and fine dining spots.",
-  },
-  {
-    title: "Creative Studios",
-    desc: "Discover creators, photographers and artists.",
-  },
 ];
 
 export default function Home() {
@@ -352,7 +344,25 @@ export default function Home() {
       </section>
 
  {/* WHY BLINKED */}
-<section className="relative z-10 py-24 bg-[#111315] overflow-visible">
+<section className="relative z-10 pt-24 pb-65 bg-[#111315] overflow-visible">
+  
+  {/* Top Curved Shape */}
+<div className="absolute top-0 left-0 w-full overflow-hidden leading-none rotate-180">
+
+  <svg
+    viewBox="0 0 1440 320"
+    preserveAspectRatio="none"
+    className="relative block w-full h-[140px]"
+  >
+
+    <path
+      fill="#111315"
+      d="M0,160C240,260,480,320,720,320C960,320,1200,260,1440,160L1440,320L0,320Z"
+    />
+
+  </svg>
+
+</div>
 
   <div className="relative z-10 max-w-7xl mx-auto px-6">
 
@@ -487,6 +497,290 @@ export default function Home() {
         </div>
 
       </motion.div>
+
+    </div>
+
+  </div>
+
+ {/* Curved Bottom Fade */}
+<div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
+
+  {/* Curved Shape */}
+  <svg
+    viewBox="0 0 1440 320"
+    preserveAspectRatio="none"
+    className="relative block w-full h-[200px]"
+  >
+
+    <path
+      fill="#f6f1e8"
+      d="M0,160C240,260,480,320,720,320C960,320,1200,260,1440,160L1440,320L0,320Z"
+    />
+
+  </svg>
+
+</div>
+
+</section>
+
+{/* BROWSE CATEGORIES */}
+<section className="relative py-28 bg-[#f6f1e8]">
+
+  <div className="max-w-7xl mx-auto px-6">
+
+    {/* Heading */}
+    <div className="text-center max-w-4xl mx-auto mb-20">
+
+      <p className="uppercase tracking-[0.3em] text-yellow-700 font-semibold text-sm mb-5">
+        BROWSE CATEGORIES
+      </p>
+
+      <h2 className="text-5xl md:text-6xl font-black tracking-tight leading-[1]">
+
+        Discover Businesses
+        <br />
+        By Industry.
+
+      </h2>
+
+      <p className="mt-6 text-black/60 text-lg leading-relaxed">
+
+        Explore businesses, services and professionals
+        across multiple industries and categories.
+
+      </p>
+
+    </div>
+
+    {/* Grid */}
+    <div className="grid lg:grid-cols-3 gap-10">
+
+      {/* COLUMN 1 */}
+      <div className="bg-white/60 border border-black/5 rounded-[2.5rem] p-10 shadow-[0_10px_40px_rgba(0,0,0,0.04)]">
+
+        <h3 className="text-3xl font-bold tracking-tight mb-8">
+
+          Business Industry
+
+        </h3>
+
+        <div className="space-y-4 text-black/65">
+
+          {[
+            "Apparels & Accessories",
+            "Chemicals",
+            "Computers & Internet",
+            "Electronics & Lighting",
+            "Entertainment & Lifestyle",
+            "Food & Agriculture",
+            "Furniture & Furnishings",
+            "Home Appliances",
+            "Manufacturing & Industry",
+            "Property & Tradesmen",
+            "Shopping",
+            "Textiles & Fabrics",
+            "Toys, Games & Sports",
+          ].map((item, index) => (
+
+            <div
+              key={index}
+              className="flex items-center gap-3 hover:text-black transition duration-300 cursor-pointer"
+            >
+
+              <span className="text-yellow-600">
+                ➯
+              </span>
+
+              <span>
+                {item}
+              </span>
+
+            </div>
+
+          ))}
+
+        </div>
+
+      </div>
+
+      {/* COLUMN 2 */}
+      <div className="bg-white/60 border border-black/5 rounded-[2.5rem] p-10 shadow-[0_10px_40px_rgba(0,0,0,0.04)]">
+
+        <h3 className="text-3xl font-bold tracking-tight mb-8">
+
+          Service Providers
+
+        </h3>
+
+        <div className="space-y-4 text-black/65">
+
+          {[
+            "Auto & Vehicle Transport",
+            "Business Services",
+            "Education & Training",
+            "Events & Conferences",
+            "Financial & Legal",
+            "Food & Drink",
+            "Health & Wellness",
+            "Home Services",
+            "Home Improvement",
+            "Photography & Videography",
+            "Properties & Rentals",
+            "Tourism & Accommodation",
+            "Travel & Transport",
+            "Vedic Shastra",
+          ].map((item, index) => (
+
+            <div
+              key={index}
+              className="flex items-center gap-3 hover:text-black transition duration-300 cursor-pointer"
+            >
+
+              <span className="text-yellow-600">
+                ➯
+              </span>
+
+              <span>
+                {item}
+              </span>
+
+            </div>
+
+          ))}
+
+        </div>
+
+      </div>
+
+      {/* COLUMN 3 */}
+      <div className="bg-white/60 border border-black/5 rounded-[2.5rem] p-10 shadow-[0_10px_40px_rgba(0,0,0,0.04)]">
+
+        <h3 className="text-3xl font-bold tracking-tight mb-8">
+
+          Personal & Professional Bio
+
+        </h3>
+
+        <div className="space-y-4 text-black/65">
+
+          {[
+            "Actors & Performers",
+            "Bloggers",
+            "Commercial Models",
+            "Craft Artists",
+            "Design Artists",
+            "Digital Artists",
+            "Directors & Producers",
+            "Influencers",
+            "Literary Artists",
+            "Multimedia Artists",
+            "Performing Artists",
+            "Politicians & Social Worker",
+            "Runway & Fashion Models",
+            "Visual Artists",
+          ].map((item, index) => (
+
+            <div
+              key={index}
+              className="flex items-center gap-3 hover:text-black transition duration-300 cursor-pointer"
+            >
+
+              <span className="text-yellow-600">
+                ➯
+              </span>
+
+              <span>
+                {item}
+              </span>
+
+            </div>
+
+          ))}
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+{/* SHARE SECTION */}
+<section className="relative z-10 py-20 bg-[#0d0f11] border-t border-white/5">
+
+  <div className="max-w-7xl mx-auto px-6">
+
+    <div className="rounded-[2.5rem] bg-white/[0.03] border border-white/10 px-10 py-12 flex flex-col lg:flex-row items-center justify-between gap-10">
+
+      {/* Left Content */}
+      <div>
+
+        <p className="uppercase tracking-[0.25em] text-yellow-500 font-semibold text-sm mb-4">
+          SUPPORT LOCAL
+        </p>
+
+        <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight leading-tight">
+
+          Be Vocal
+          <br />
+          For Local.
+
+        </h2>
+
+        <p className="mt-5 text-white/60 max-w-xl leading-relaxed">
+
+          Share Blinked with friends, support local businesses
+          and help people discover the best places around them.
+
+        </p>
+
+      </div>
+
+      {/* Right Buttons */}
+      
+      <div className="flex flex-wrap items-center justify-center gap-4">
+
+        {[
+          {
+            icon: <FaFacebookF />,
+            name: "Facebook",
+          },
+
+          {
+            icon: <FaTwitter />,
+            name: "Twitter",
+          },
+
+          {
+            icon: <FaLinkedinIn />,
+            name: "LinkedIn",
+          },
+
+          {
+            icon: <FaPinterestP />,
+            name: "Pinterest",
+          },
+
+          {
+            icon: <FaWhatsapp />,
+            name: "WhatsApp",
+          },
+        ].map((social, index) => (
+
+          <button
+            key={index}
+            className="w-14 h-14 rounded-full bg-white/5 border border-white/10 text-white/80 hover:bg-yellow-400 hover:text-black transition-all duration-300 flex items-center justify-center text-xl"
+          >
+
+            {social.icon}
+
+          </button>
+
+        ))}
+
+      </div>
 
     </div>
 
